@@ -17,12 +17,14 @@
 <body>
 	<div id="box">
 		box
+<!--
 		<div class="handle">
 			drag hear
 		</div>
 		<div class="cancel">
 			not drag hear
 		</div>
+-->
 	</div>
 	
 	<script>
@@ -30,8 +32,11 @@
 			$("#box").draggable({
 //				axis: 'x'
 				opacity: 0.5,
-				handle: '.handle',
-				cancel: '.cancel'
+//				handle: '.handle',
+//				cancel: '.cancel'
+				drag: function(event, ui) {
+					console.log(ui.position);
+				}
 			});
 		});
 	</script>
