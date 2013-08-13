@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>jQueryUIの練習</title>
+	<link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.3.custom.min.css">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+	<style>
+		.ui-selected {
+			background: gray;
+		}
+	</style>
+</head>
+<body>
+	<ui id="selectable">
+		<li id="item_1">item1</li>
+		<li id="item_2">item2</li>
+		<li id="item_3">item3</li>
+		<li id="item_4">item4</li>
+		<li id="item_5">item5</li>
+	</ui>
+	
+	<script>
+		$(function() {
+			var selected = new Array();
+			$("#selectable").selectable({
+				selected: function(event, ui) {
+					if (selected.indexOf(ui.selected.id) == -1) {
+						selected.push(ui.selected.id);
+					}
+					console.log(selected);
+				},
+				unselected: function(event, ui) {
+					var id = ui.unselected.id;
+					selected.splice(selected.indexOf(id), 1);
+					console.log(selected);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
