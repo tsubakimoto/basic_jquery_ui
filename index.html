@@ -17,11 +17,22 @@
 <body>
 	<div id="box">
 		box
+		<div class="handle">
+			drag hear
+		</div>
+		<div class="cancel">
+			not drag hear
+		</div>
 	</div>
 	
 	<script>
 		$(function() {
-			$("#box").draggable();
+			$("#box").draggable({
+//				axis: 'x'
+				opacity: 0.5,
+				handle: '.handle',
+				cancel: '.cancel'
+			});
 		});
 	</script>
 </body>
