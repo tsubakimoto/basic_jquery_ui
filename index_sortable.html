@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>jQueryUIの練習</title>
+	<link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.3.custom.min.css">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+	<style>
+		.box {
+			width: 100px;
+			height: 100px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<ul id="sortable">
+		<li id="item_1">item1</li>
+		<li id="item_2">item2</li>
+		<li id="item_3">item3</li>
+		<li id="item_4">item4</li>
+		<li id="item_5">item5</li>
+	</ul>
+	
+	<script>
+		$(function() {
+			$("#sortable").sortable({
+				cursor: 'move',
+				opacity: 0.5,
+				update: function(event, ui) {
+					var data = $(this).sortable("serialize");
+					console.log(data);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
