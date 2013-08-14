@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>jQueryUIの練習</title>
+	<link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.3.custom.min.css">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+</head>
+<body>
+	<div id="tabs">
+		<ul>
+			<li><a href="#menu1">Menu1</a></li>
+			<li><a href="#menu2">Menu2</a></li>
+			<li><a href="#menu3">Menu3</a></li>
+		</ul>
+		
+		<div id="menu1">menu 1</div>
+		<div id="menu2">menu 2</div>
+		<div id="menu3">menu 3</div>
+	</div>
+	
+	<script>
+		$(function() {
+			$('#tabs').tabs({
+				active: 1
+			});
+		});
+	</script>
+</body>
+</html>
